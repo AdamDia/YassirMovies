@@ -11,7 +11,9 @@ import SwiftUI
 struct YassirMoviesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MoviesListView()
+//            MovieDetails(movie: moviesData.first!, showingDetails: false)
+//            SeeAllList(categoryName: moviesData.first!.catagory.rawValue, movies: moviesData)
         }
     }
 }
