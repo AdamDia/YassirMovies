@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MoviesListView: View {
     
+    @StateObject var viewModel = MoviesListViewModel(networkManager: NetworkManager())
+    
     var catagories: [String: [Movie]] {
         .init(grouping: moviesData,
               by: {$0.catagory.rawValue}
@@ -44,6 +46,12 @@ struct MoviesListView: View {
                 .navigationTitle("Movies")
             }
         }
+        .onAppear {
+            Task {
+                await viewModel.fetchMovies()
+            }
+        }
+        
     }
 }
 

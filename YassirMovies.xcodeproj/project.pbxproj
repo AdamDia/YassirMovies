@@ -20,6 +20,9 @@
 		8AA3695229D7CACD00B7A7B7 /* TrailorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3695129D7CACD00B7A7B7 /* TrailorView.swift */; };
 		8AA3695629D7CE9000B7A7B7 /* SeeAllList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3695529D7CE9000B7A7B7 /* SeeAllList.swift */; };
 		8AA3695829D7D0CB00B7A7B7 /* SeeAllMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3695729D7D0CB00B7A7B7 /* SeeAllMovieCell.swift */; };
+		8AA3697829D9430200B7A7B7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697729D9430200B7A7B7 /* NetworkManager.swift */; };
+		8AA3697A29D9432600B7A7B7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697929D9432600B7A7B7 /* APIError.swift */; };
+		8AA3697C29D94B1A00B7A7B7 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		8AA3695129D7CACD00B7A7B7 /* TrailorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailorView.swift; sourceTree = "<group>"; };
 		8AA3695529D7CE9000B7A7B7 /* SeeAllList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllList.swift; sourceTree = "<group>"; };
 		8AA3695729D7D0CB00B7A7B7 /* SeeAllMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllMovieCell.swift; sourceTree = "<group>"; };
+		8AA3697729D9430200B7A7B7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8AA3697929D9432600B7A7B7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,8 @@
 				8AA3694829D7366000B7A7B7 /* MoviesMock.json */,
 				8AA3694A29D736A100B7A7B7 /* JsonLoader.swift */,
 				8AA3694629D7337000B7A7B7 /* MovieDataModel.swift */,
+				8AA3697729D9430200B7A7B7 /* NetworkManager.swift */,
+				8AA3697929D9432600B7A7B7 /* APIError.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -100,9 +108,7 @@
 		8AA3695329D7CE1D00B7A7B7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8AA3693829D636FE00B7A7B7 /* MoviesListView.swift */,
-				8AA3694429D713B800B7A7B7 /* MovieCell.swift */,
-				8AA3694D29D7389A00B7A7B7 /* MovieItem.swift */,
+				8AA3697D29D94B2900B7A7B7 /* Movies List */,
 				8AA3695529D7CE9000B7A7B7 /* SeeAllList.swift */,
 				8AA3695729D7D0CB00B7A7B7 /* SeeAllMovieCell.swift */,
 			);
@@ -116,6 +122,17 @@
 				8AA3695129D7CACD00B7A7B7 /* TrailorView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		8AA3697D29D94B2900B7A7B7 /* Movies List */ = {
+			isa = PBXGroup;
+			children = (
+				8AA3693829D636FE00B7A7B7 /* MoviesListView.swift */,
+				8AA3694429D713B800B7A7B7 /* MovieCell.swift */,
+				8AA3694D29D7389A00B7A7B7 /* MovieItem.swift */,
+				8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */,
+			);
+			path = "Movies List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +210,10 @@
 				8AA3693929D636FE00B7A7B7 /* MoviesListView.swift in Sources */,
 				8AA3695029D7C45700B7A7B7 /* MovieDetails.swift in Sources */,
 				8AA3693729D636FE00B7A7B7 /* YassirMoviesApp.swift in Sources */,
+				8AA3697829D9430200B7A7B7 /* NetworkManager.swift in Sources */,
+				8AA3697A29D9432600B7A7B7 /* APIError.swift in Sources */,
 				8AA3694729D7337000B7A7B7 /* MovieDataModel.swift in Sources */,
+				8AA3697C29D94B1A00B7A7B7 /* MoviesListViewModel.swift in Sources */,
 				8AA3695229D7CACD00B7A7B7 /* TrailorView.swift in Sources */,
 				8AA3695629D7CE9000B7A7B7 /* SeeAllList.swift in Sources */,
 				8AA3694E29D7389A00B7A7B7 /* MovieItem.swift in Sources */,
