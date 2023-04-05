@@ -23,6 +23,13 @@
 		8AA3697829D9430200B7A7B7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697729D9430200B7A7B7 /* NetworkManager.swift */; };
 		8AA3697A29D9432600B7A7B7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697929D9432600B7A7B7 /* APIError.swift */; };
 		8AA3697C29D94B1A00B7A7B7 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */; };
+		8AA369CD29DCDADC00B7A7B7 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369CC29DCDADC00B7A7B7 /* Data+Ext.swift */; };
+		8AA369D029DCF21200B7A7B7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8AA369CF29DCF21200B7A7B7 /* Kingfisher */; };
+		8AA369D229DD0C1E00B7A7B7 /* MoviePosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D129DD0C1E00B7A7B7 /* MoviePosterView.swift */; };
+		8AA369D429DD0C4200B7A7B7 /* KingFisherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D329DD0C4200B7A7B7 /* KingFisherImageView.swift */; };
+		8AA369D629DD0E4B00B7A7B7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D529DD0E4B00B7A7B7 /* LoadingView.swift */; };
+		8AA369D829DD0EDB00B7A7B7 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D729DD0EDB00B7A7B7 /* Alerts.swift */; };
+		8AA369DA29DD1AEC00B7A7B7 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D929DD1AEC00B7A7B7 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,13 @@
 		8AA3697729D9430200B7A7B7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8AA3697929D9432600B7A7B7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
+		8AA369CC29DCDADC00B7A7B7 /* Data+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
+		8AA369D129DD0C1E00B7A7B7 /* MoviePosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterView.swift; sourceTree = "<group>"; };
+		8AA369D329DD0C4200B7A7B7 /* KingFisherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherImageView.swift; sourceTree = "<group>"; };
+		8AA369D529DD0E4B00B7A7B7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8AA369D729DD0EDB00B7A7B7 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		8AA369D929DD1AEC00B7A7B7 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		8AA369DB29DD1FF000B7A7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AA369D029DCF21200B7A7B7 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +90,11 @@
 		8AA3693529D636FE00B7A7B7 /* YassirMovies */ = {
 			isa = PBXGroup;
 			children = (
+				8AA369DB29DD1FF000B7A7B7 /* Info.plist */,
 				8AA3693629D636FE00B7A7B7 /* YassirMoviesApp.swift */,
 				8AA3695329D7CE1D00B7A7B7 /* Home */,
 				8AA3695429D7CE5500B7A7B7 /* Details */,
+				8AA369CB29DCDAC100B7A7B7 /* Helper and Extensions */,
 				8AA3694C29D736DC00B7A7B7 /* NetworkManager */,
 				8AA3693A29D636FF00B7A7B7 /* Assets.xcassets */,
 				8AA3693C29D636FF00B7A7B7 /* Preview Content */,
@@ -96,6 +113,7 @@
 		8AA3694C29D736DC00B7A7B7 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				8AA369D929DD1AEC00B7A7B7 /* MockData.swift */,
 				8AA3694829D7366000B7A7B7 /* MoviesMock.json */,
 				8AA3694A29D736A100B7A7B7 /* JsonLoader.swift */,
 				8AA3694629D7337000B7A7B7 /* MovieDataModel.swift */,
@@ -109,8 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA3697D29D94B2900B7A7B7 /* Movies List */,
-				8AA3695529D7CE9000B7A7B7 /* SeeAllList.swift */,
-				8AA3695729D7D0CB00B7A7B7 /* SeeAllMovieCell.swift */,
+				8AA369DC29DD216100B7A7B7 /* See all */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -128,11 +145,32 @@
 			isa = PBXGroup;
 			children = (
 				8AA3693829D636FE00B7A7B7 /* MoviesListView.swift */,
+				8AA369D129DD0C1E00B7A7B7 /* MoviePosterView.swift */,
 				8AA3694429D713B800B7A7B7 /* MovieCell.swift */,
 				8AA3694D29D7389A00B7A7B7 /* MovieItem.swift */,
 				8AA3697B29D94B1A00B7A7B7 /* MoviesListViewModel.swift */,
 			);
 			path = "Movies List";
+			sourceTree = "<group>";
+		};
+		8AA369CB29DCDAC100B7A7B7 /* Helper and Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8AA369CC29DCDADC00B7A7B7 /* Data+Ext.swift */,
+				8AA369D329DD0C4200B7A7B7 /* KingFisherImageView.swift */,
+				8AA369D529DD0E4B00B7A7B7 /* LoadingView.swift */,
+				8AA369D729DD0EDB00B7A7B7 /* Alerts.swift */,
+			);
+			path = "Helper and Extensions";
+			sourceTree = "<group>";
+		};
+		8AA369DC29DD216100B7A7B7 /* See all */ = {
+			isa = PBXGroup;
+			children = (
+				8AA3695529D7CE9000B7A7B7 /* SeeAllList.swift */,
+				8AA3695729D7D0CB00B7A7B7 /* SeeAllMovieCell.swift */,
+			);
+			path = "See all";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +189,9 @@
 			dependencies = (
 			);
 			name = YassirMovies;
+			packageProductDependencies = (
+				8AA369CF29DCF21200B7A7B7 /* Kingfisher */,
+			);
 			productName = YassirMovies;
 			productReference = 8AA3693329D636FE00B7A7B7 /* YassirMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 8AA3692A29D636FE00B7A7B7;
+			packageReferences = (
+				8AA369CE29DCF21200B7A7B7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8AA3693429D636FE00B7A7B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,14 +254,20 @@
 				8AA3693929D636FE00B7A7B7 /* MoviesListView.swift in Sources */,
 				8AA3695029D7C45700B7A7B7 /* MovieDetails.swift in Sources */,
 				8AA3693729D636FE00B7A7B7 /* YassirMoviesApp.swift in Sources */,
+				8AA369DA29DD1AEC00B7A7B7 /* MockData.swift in Sources */,
+				8AA369D229DD0C1E00B7A7B7 /* MoviePosterView.swift in Sources */,
 				8AA3697829D9430200B7A7B7 /* NetworkManager.swift in Sources */,
+				8AA369D629DD0E4B00B7A7B7 /* LoadingView.swift in Sources */,
 				8AA3697A29D9432600B7A7B7 /* APIError.swift in Sources */,
+				8AA369CD29DCDADC00B7A7B7 /* Data+Ext.swift in Sources */,
 				8AA3694729D7337000B7A7B7 /* MovieDataModel.swift in Sources */,
 				8AA3697C29D94B1A00B7A7B7 /* MoviesListViewModel.swift in Sources */,
 				8AA3695229D7CACD00B7A7B7 /* TrailorView.swift in Sources */,
 				8AA3695629D7CE9000B7A7B7 /* SeeAllList.swift in Sources */,
+				8AA369D429DD0C4200B7A7B7 /* KingFisherImageView.swift in Sources */,
 				8AA3694E29D7389A00B7A7B7 /* MovieItem.swift in Sources */,
 				8AA3694529D713B800B7A7B7 /* MovieCell.swift in Sources */,
+				8AA369D829DD0EDB00B7A7B7 /* Alerts.swift in Sources */,
 				8AA3694B29D736A100B7A7B7 /* JsonLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +400,7 @@
 				DEVELOPMENT_TEAM = XHKRMS9TZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = YassirMovies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -379,7 +429,7 @@
 				DEVELOPMENT_TEAM = XHKRMS9TZN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = YassirMovies/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -419,6 +469,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AA369CE29DCF21200B7A7B7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AA369CF29DCF21200B7A7B7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AA369CE29DCF21200B7A7B7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8AA3692B29D636FE00B7A7B7 /* Project object */;
 }

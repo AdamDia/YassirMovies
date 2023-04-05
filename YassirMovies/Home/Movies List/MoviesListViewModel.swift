@@ -7,33 +7,101 @@
 
 import SwiftUI
 
+@MainActor
 final class MoviesListViewModel: ObservableObject {
+    @Published private var topRatedMovies: [MovieData] = []
+    @Published private var upcomingMovies: [MovieData] = []
+    @Published private var popularMovies: [MovieData] = []
+    @Published var alertItem: AlertItem?
+    @Published var isLoading: Bool = false
     
-    @Published var topRatedMovies: [MovieData] = []
-    @Published var upcomingMovies: [MovieData] = []
-    @Published var popularMovies: [MovieData] = []
+    @Published private(set) var trendingMovies: [MovieData] = []
+    @Published private(set) var trailerResult: [TrailerResult] = []
     
+    private lazy var movieCategoryDict: [Category: [MovieData]] = [:]
+    private let imageBaseUrl = "https://image.tmdb.org/t/p/w500"
+    private let youtubeTrailerBaseUrl = "https://www.youtube.com/watch?v="
     private var networkManager: NetworkProtocol
     
     init(networkManager: NetworkProtocol) {
         self.networkManager = networkManager
     }
     
-    func fetchMovies() async {
+    func fetchMovies()  async {
+        self.isLoading = true
+        defer {
+            self.isLoading = false
+        }
         do {
-            let topRatedMovies = try await networkManager.fetchMovies(endpoint: "top_rated")
-            let upcomingMovies = try await networkManager.fetchMovies(endpoint: "upcoming")
-            let popularMovies = try await networkManager.fetchMovies(endpoint: "popular")
+            let topRatedMovies = try await networkManager.fetchMovies(endpoint: .topRated)
+            let upcomingMovies = try await networkManager.fetchMovies(endpoint: .upcoming)
+            let popularMovies = try await networkManager.fetchMovies(endpoint: .popular)
+            let trendingMovies = try await networkManager.fetchMovies(endpoint: .trending)
             
-            DispatchQueue.main.async {
+            Task {
                 self.topRatedMovies = topRatedMovies
                 self.upcomingMovies = upcomingMovies
                 self.popularMovies = popularMovies
+                self.trendingMovies = trendingMovies
+                self.movieCategoryDict = self.createCategoryDictionary()
             }
+            
         } catch {
-            print("Error fetching movies:", error)
+            if let apiError = error as? APIError {
+                switch apiError {
+                case .invalidURL:
+                    alertItem = AlertContext.invalidURL
+                case .invalidResponse:
+                    alertItem = AlertContext.invalidResponse
+                case .invalidData:
+                    alertItem = AlertContext.invalidData
+                }
+            } else {
+                alertItem = AlertContext.invalidData
+            }
         }
     }
     
+    func createCategoryDictionary() -> [Category: [MovieData]]{
+        return  Dictionary(uniqueKeysWithValues: zip(Category.allCases, [topRatedMovies, popularMovies, upcomingMovies]))
+    }
     
+    func moviePoster(posterPath: String) -> String {
+        return imageBaseUrl + posterPath
+    }
+    
+    func youtubeTrailerLink(key: String) -> URL? {
+        guard let url = URL(string: youtubeTrailerBaseUrl + key) else { return nil}
+        return url
+    }
+    
+    func fetchMovieTrailer(id: Int) async {
+        isLoading = true
+        defer {
+            isLoading = false
+        }
+        
+        do {
+            let trailers = try await networkManager.fetchTrailerMovieKey(id: id)
+            
+            Task {
+                self.trailerResult = trailers
+            }
+        } catch {
+            if let apiError = error as? APIError {
+                switch apiError {
+                case .invalidURL:
+                    alertItem = AlertContext.invalidURL
+                case .invalidResponse:
+                    alertItem = AlertContext.invalidResponse
+                case .invalidData:
+                    alertItem = AlertContext.invalidData
+                }
+            } else {
+                alertItem = AlertContext.invalidData
+            }
+            
+        }
+        
+    }
 }

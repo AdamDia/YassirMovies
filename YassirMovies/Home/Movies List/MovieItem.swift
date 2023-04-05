@@ -9,13 +9,12 @@ import SwiftUI
 
 struct MovieItem: View {
     
-    var movie: Movie
+    @ObservedObject var viewModel: MoviesListViewModel
+    var movie: MovieData
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Image(movie.thumbnail)
-                .resizable()
-                .renderingMode(.original)
+            KingFisherImageView(imageStrURL: viewModel.moviePoster(posterPath: movie.posterPath))
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 170)
                 .clipped()
@@ -38,6 +37,6 @@ struct MovieItem: View {
 
 struct MovieItem_Previews: PreviewProvider {
     static var previews: some View {
-        MovieItem(movie: moviesData.first!)
+        MovieItem(viewModel: MoviesListViewModel(networkManager: NetworkManager()), movie: mockMovieData.first!)
     }
 }

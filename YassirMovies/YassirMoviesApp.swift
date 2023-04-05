@@ -12,8 +12,6 @@ struct YassirMoviesApp: App {
     var body: some Scene {
         WindowGroup {
             MoviesListView()
-//            MovieDetails(movie: moviesData.first!, showingDetails: false)
-//            SeeAllList(categoryName: moviesData.first!.catagory.rawValue, movies: moviesData)
         }
     }
 }

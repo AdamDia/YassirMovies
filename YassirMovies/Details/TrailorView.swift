@@ -9,15 +9,17 @@ import SwiftUI
 import SafariServices
 
 struct TrailorView: View {
-    var movieURL: URL
+    var movieURL: URL?
     var body: some View {
-        SafariView(url: movieURL)
+        if let movieURL = movieURL {
+            SafariView(url: movieURL)
+        }
     }
 }
 
 struct TrailorView_Previews: PreviewProvider {
     static var previews: some View {
-        TrailorView(movieURL: URL(string: moviesData.first!.trailerLink)!)
+        TrailorView(movieURL: URL(string: "https://www.youtube.com/watch?v=\(mockTrailerData.first!.utubeTrailerKey)")!)
     }
 }
 

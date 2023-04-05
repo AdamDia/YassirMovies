@@ -7,23 +7,6 @@
 
 import Foundation
 
-struct Movie: Codable, Identifiable {
-    var id: Int
-    var thumbnail: String
-    var title: String
-    var description: String
-    var trailerLink: String
-    var catagory: Catagory
-    var isFeaturedMovie: Bool
-    
-    enum Catagory: String, CaseIterable, Codable {
-        case topRated = "Top Rated"
-        case popular = "Popular"
-        case upComing = "Upcoming"
-    }
-}
-
-
 // MARK: - MovieDataModel
 struct MovieDataModel: Codable {
     let page: Int
@@ -39,7 +22,7 @@ struct MovieDataModel: Codable {
 }
 
 // MARK: - MovieData
-struct MovieData: Codable {
+struct MovieData: Codable, Identifiable {
     let id: Int
     let posterPath, title, description: String
 
@@ -52,17 +35,27 @@ struct MovieData: Codable {
 }
 
 
-// MARK: - movie trailer video key
+// MARK: - Movie trailer video key
 struct MovieTrailerDataModel: Codable {
     let id: Int
-    let results: [Result]
+    let results: [TrailerResult]
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct TrailerResult: Codable {
     let utubeTrailerKey: String
     
     enum CodingKeys: String, CodingKey {
        case utubeTrailerKey = "key"
+    }
+}
+
+enum Category: String, CaseIterable, Comparable {
+    case topRate = "Top Rated"
+    case popular = "Popular"
+    case upcoming = "Upcoming"
+    
+    static func < (lhs: Category, rhs: Category) -> Bool {
+        return lhs.rawValue < rhs.rawValue
     }
 }

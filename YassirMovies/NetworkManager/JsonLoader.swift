@@ -7,25 +7,30 @@
 
 import Foundation
 
-let moviesData:[Movie] = load("MoviesMock")
+protocol JsonLoader: AnyObject {
+    var bundle: Bundle { get }
+    func loadJSON<T: Decodable>(filename: String, type: T.Type, completion: @escaping (Result<T, Error>) -> Void)
+}
 
-func load<T:Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
-    let data: Data
-    guard let file = Bundle.main.url(forResource: filename, withExtension: ".json")
-        else {
-            fatalError("Couldn't find \(filename) in main bundle.")
+extension JsonLoader {
+    var bundle: Bundle {
+        return Bundle(for: type(of: self))
     }
     
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-    }
-    
-    do {
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    func loadJSON<T: Decodable>(filename: String, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let path = bundle.url(forResource: filename, withExtension: "json") else {
+            fatalError("Failed to load JSON file")
+        }
+        
+        do {
+            let data = try Data(contentsOf: path)
+            let decodedObject = try JSONDecoder().decode(T.self, from: data)
+            completion(.success(decodedObject))
+        } catch {
+            completion(.failure(error))
+            print("❌" + error.localizedDescription)
+            fatalError("Failed to decode the JSON")
+            
+        }
     }
 }

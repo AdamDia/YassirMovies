@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct SeeAllMovieCell: View {
-    var movie: Movie
+    
+    var movie: MovieData
+    @ObservedObject var viewModel: MoviesListViewModel
     var body: some View {
         HStack {
-            Image(movie.thumbnail)
-                .resizable()
-                .scaledToFit()
+            KingFisherImageView(imageStrURL: viewModel.moviePoster(posterPath: movie.posterPath))
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 150)
+                .cornerRadius(20)
             VStack(alignment: .leading) {
                 Text(movie.title)
                     .font(.headline)
@@ -29,6 +31,6 @@ struct SeeAllMovieCell: View {
 
 struct SeeAllMovieCell_Previews: PreviewProvider {
     static var previews: some View {
-        SeeAllMovieCell(movie: moviesData.first!)
+        SeeAllMovieCell(movie:  mockMovieData.first! , viewModel: MoviesListViewModel(networkManager: NetworkManager()))
     }
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MovieCell: View {
     var categoryName: String
-    var movies: [Movie]
+    var movies: [MovieData]
+    @ObservedObject var viewModel: MoviesListViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,7 +20,7 @@ struct MovieCell: View {
                     .fontWeight(.semibold)
                     .padding(.leading, 5)
                 Spacer()
-                NavigationLink(destination: SeeAllList(categoryName: categoryName, movies: movies)) {
+                NavigationLink(destination: SeeAllList(categoryName: categoryName, movies: movies, viewModel: viewModel)) {
                     Text("See all")
                         .foregroundColor(.blue)
                 }
@@ -28,9 +29,8 @@ struct MovieCell: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack() {
                     ForEach(self.movies) { movie in
-                        NavigationLink(destination:
-                                        MovieDetails(movie: movie)) {
-                            MovieItem(movie: movie)
+                        NavigationLink(destination: MovieDetails(movie: movie, viewModel: viewModel)) {
+                            MovieItem(viewModel: viewModel, movie: movie)
                                 .frame(width: 300)
                                 .padding(.trailing)
                                 .cornerRadius(10)
@@ -45,7 +45,8 @@ struct MovieCell: View {
 
 struct MovieCell_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCell(categoryName: "Category Name", movies: load("MoviesMock"))
+        MovieCell(categoryName: "Category Name", movies: mockMovieData, viewModel: MoviesListViewModel(networkManager: NetworkManager()))
+        
     }
 }
 
