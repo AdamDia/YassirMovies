@@ -9,9 +9,10 @@ import SwiftUI
 
 @MainActor
 final class MoviesListViewModel: ObservableObject {
-    @Published private var topRatedMovies: [MovieData] = []
-    @Published private var upcomingMovies: [MovieData] = []
-    @Published private var popularMovies: [MovieData] = []
+//    @Published private(set) var topRatedMovies: [MovieData] = []
+     var topRatedMovies: [MovieData] = mockMovieData
+    @Published private(set) var upcomingMovies: [MovieData] = []
+    @Published private(set) var popularMovies: [MovieData] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool = false
     

@@ -9,7 +9,7 @@ import Foundation
 
 protocol JsonLoader: AnyObject {
     var bundle: Bundle { get }
-    func loadJSON<T: Decodable>(filename: String, type: T.Type, completion: @escaping (Result<T, Error>) -> Void)
+    func loadJSON<T: Decodable>(filename: String, type: T.Type) async throws -> T
 }
 
 extension JsonLoader {
@@ -17,20 +17,13 @@ extension JsonLoader {
         return Bundle(for: type(of: self))
     }
     
-    func loadJSON<T: Decodable>(filename: String, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        guard let path = bundle.url(forResource: filename, withExtension: "json") else {
-            fatalError("Failed to load JSON file")
+    func loadJSON<T: Decodable>(filename: String, type: T.Type) async throws -> T {
+        guard let path = bundle.url(forResource: filename, withExtension: ".json") else {
+            throw NSError(domain: "Failed to load JSON file", code: 0, userInfo: nil)
         }
         
-        do {
-            let data = try Data(contentsOf: path)
-            let decodedObject = try JSONDecoder().decode(T.self, from: data)
-            completion(.success(decodedObject))
-        } catch {
-            completion(.failure(error))
-            print("❌" + error.localizedDescription)
-            fatalError("Failed to decode the JSON")
-            
-        }
+        let data = try Data(contentsOf: path)
+        let decodedObject = try JSONDecoder().decode(T.self, from: data)
+        return decodedObject
     }
 }

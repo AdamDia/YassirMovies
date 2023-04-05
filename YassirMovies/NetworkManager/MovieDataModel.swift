@@ -22,7 +22,7 @@ struct MovieDataModel: Codable {
 }
 
 // MARK: - MovieData
-struct MovieData: Codable, Identifiable {
+struct MovieData: Codable, Identifiable, Equatable {
     let id: Int
     let posterPath, title, description: String
 
@@ -31,6 +31,10 @@ struct MovieData: Codable, Identifiable {
         case description = "overview"
         case posterPath = "poster_path"
         case title
+    }
+    
+    static func == (lhs: MovieData, rhs: MovieData) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
@@ -42,11 +46,15 @@ struct MovieTrailerDataModel: Codable {
 }
 
 // MARK: - Result
-struct TrailerResult: Codable {
+struct TrailerResult: Codable, Equatable {
     let utubeTrailerKey: String
     
     enum CodingKeys: String, CodingKey {
        case utubeTrailerKey = "key"
+    }
+    
+    static func == (lhs: TrailerResult, rhs: TrailerResult) -> Bool {
+        lhs.utubeTrailerKey == rhs.utubeTrailerKey
     }
 }
 

@@ -30,7 +30,22 @@
 		8AA369D629DD0E4B00B7A7B7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D529DD0E4B00B7A7B7 /* LoadingView.swift */; };
 		8AA369D829DD0EDB00B7A7B7 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D729DD0EDB00B7A7B7 /* Alerts.swift */; };
 		8AA369DA29DD1AEC00B7A7B7 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369D929DD1AEC00B7A7B7 /* MockData.swift */; };
+		8AA369EB29DD286C00B7A7B7 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369EA29DD286C00B7A7B7 /* MockNetworkManager.swift */; };
+		8AA369ED29DD2B9000B7A7B7 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369EC29DD2B9000B7A7B7 /* NetworkManagerTests.swift */; };
+		8AA369F129DD2E4400B7A7B7 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA369F029DD2E4400B7A7B7 /* MoviesListViewModel.swift */; };
+		8AA369F329DD307E00B7A7B7 /* MockMoviesJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA369F229DD307E00B7A7B7 /* MockMoviesJSON.json */; };
+		8AA369F429DD324700B7A7B7 /* TrailerMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AA369EE29DD2DA700B7A7B7 /* TrailerMock.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AA369E529DD281800B7A7B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AA3692B29D636FE00B7A7B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AA3693229D636FE00B7A7B7;
+			remoteInfo = YassirMovies;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8AA3693329D636FE00B7A7B7 /* YassirMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YassirMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +72,12 @@
 		8AA369D729DD0EDB00B7A7B7 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		8AA369D929DD1AEC00B7A7B7 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		8AA369DB29DD1FF000B7A7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8AA369E129DD281800B7A7B7 /* YassirMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YassirMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA369EA29DD286C00B7A7B7 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		8AA369EC29DD2B9000B7A7B7 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		8AA369EE29DD2DA700B7A7B7 /* TrailerMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrailerMock.json; sourceTree = "<group>"; };
+		8AA369F029DD2E4400B7A7B7 /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
+		8AA369F229DD307E00B7A7B7 /* MockMoviesJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockMoviesJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AA369DE29DD281800B7A7B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA3693529D636FE00B7A7B7 /* YassirMovies */,
+				8AA369E229DD281800B7A7B7 /* YassirMoviesTests */,
 				8AA3693429D636FE00B7A7B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA3693329D636FE00B7A7B7 /* YassirMovies.app */,
+				8AA369E129DD281800B7A7B7 /* YassirMoviesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +203,18 @@
 			path = "See all";
 			sourceTree = "<group>";
 		};
+		8AA369E229DD281800B7A7B7 /* YassirMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AA369F229DD307E00B7A7B7 /* MockMoviesJSON.json */,
+				8AA369EE29DD2DA700B7A7B7 /* TrailerMock.json */,
+				8AA369EA29DD286C00B7A7B7 /* MockNetworkManager.swift */,
+				8AA369EC29DD2B9000B7A7B7 /* NetworkManagerTests.swift */,
+				8AA369F029DD2E4400B7A7B7 /* MoviesListViewModel.swift */,
+			);
+			path = YassirMoviesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +238,24 @@
 			productReference = 8AA3693329D636FE00B7A7B7 /* YassirMovies.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8AA369E029DD281800B7A7B7 /* YassirMoviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AA369E729DD281800B7A7B7 /* Build configuration list for PBXNativeTarget "YassirMoviesTests" */;
+			buildPhases = (
+				8AA369DD29DD281800B7A7B7 /* Sources */,
+				8AA369DE29DD281800B7A7B7 /* Frameworks */,
+				8AA369DF29DD281800B7A7B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AA369E629DD281800B7A7B7 /* PBXTargetDependency */,
+			);
+			name = YassirMoviesTests;
+			productName = YassirMoviesTests;
+			productReference = 8AA369E129DD281800B7A7B7 /* YassirMoviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +268,10 @@
 				TargetAttributes = {
 					8AA3693229D636FE00B7A7B7 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					8AA369E029DD281800B7A7B7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 8AA3693229D636FE00B7A7B7;
 					};
 				};
 			};
@@ -228,6 +292,7 @@
 			projectRoot = "";
 			targets = (
 				8AA3693229D636FE00B7A7B7 /* YassirMovies */,
+				8AA369E029DD281800B7A7B7 /* YassirMoviesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,6 +305,15 @@
 				8AA3693E29D636FF00B7A7B7 /* Preview Assets.xcassets in Resources */,
 				8AA3693B29D636FF00B7A7B7 /* Assets.xcassets in Resources */,
 				8AA3694929D7366000B7A7B7 /* MoviesMock.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AA369DF29DD281800B7A7B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AA369F329DD307E00B7A7B7 /* MockMoviesJSON.json in Resources */,
+				8AA369F429DD324700B7A7B7 /* TrailerMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +346,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AA369DD29DD281800B7A7B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AA369ED29DD2B9000B7A7B7 /* NetworkManagerTests.swift in Sources */,
+				8AA369EB29DD286C00B7A7B7 /* MockNetworkManager.swift in Sources */,
+				8AA369F129DD2E4400B7A7B7 /* MoviesListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8AA369E629DD281800B7A7B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AA3693229D636FE00B7A7B7 /* YassirMovies */;
+			targetProxy = 8AA369E529DD281800B7A7B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8AA3693F29D636FF00B7A7B7 /* Debug */ = {
@@ -447,6 +539,42 @@
 			};
 			name = Release;
 		};
+		8AA369E829DD281800B7A7B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XHKRMS9TZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.adam.YassirMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YassirMovies.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YassirMovies";
+			};
+			name = Debug;
+		};
+		8AA369E929DD281800B7A7B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XHKRMS9TZN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.adam.YassirMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YassirMovies.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YassirMovies";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +592,15 @@
 			buildConfigurations = (
 				8AA3694229D636FF00B7A7B7 /* Debug */,
 				8AA3694329D636FF00B7A7B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AA369E729DD281800B7A7B7 /* Build configuration list for PBXNativeTarget "YassirMoviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AA369E829DD281800B7A7B7 /* Debug */,
+				8AA369E929DD281800B7A7B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
