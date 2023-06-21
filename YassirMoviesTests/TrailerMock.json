@@ -1,13 +1,11 @@
-[
-    
-    "id": 1,
-     "results": [
-       {
-         "key": "KeyOne"
-       },
-       {
-           "key": "KeyTwo"
-       }
-     ]
-    
-]
+{
+    "id": 123,
+    "results": [
+        {
+            "key": "KeyOne"
+        },
+        {
+            "key": "KeyTwo"
+        }
+    ]
+}

@@ -11,7 +11,6 @@ struct MovieDetails: View {
     var movie: MovieData
     @State var showingDetails = false
     @ObservedObject var viewModel: MoviesListViewModel
-    private let youtubeTrailerBaseUrl = "https://www.youtube.com/watch?v="
     
     var body: some View {
         ZStack{

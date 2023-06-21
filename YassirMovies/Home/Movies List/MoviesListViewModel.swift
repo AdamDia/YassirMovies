@@ -9,8 +9,7 @@ import SwiftUI
 
 @MainActor
 final class MoviesListViewModel: ObservableObject {
-//    @Published private(set) var topRatedMovies: [MovieData] = []
-     var topRatedMovies: [MovieData] = mockMovieData
+    @Published private(set) var topRatedMovies: [MovieData] = []
     @Published private(set) var upcomingMovies: [MovieData] = []
     @Published private(set) var popularMovies: [MovieData] = []
     @Published var alertItem: AlertItem?

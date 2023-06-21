@@ -27,6 +27,7 @@ struct MoviesListView: View {
                         }
                         .tabViewStyle(PageTabViewStyle())
                         .frame(height: 225)
+                        .indexViewStyle(.page(backgroundDisplayMode: .always))
                         
                         Spacer()
                         
